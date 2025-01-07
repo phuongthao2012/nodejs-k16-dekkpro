@@ -20,5 +20,7 @@ let isHeOnTime = (expectedTime== arrivalTime);
 let msg = isHeOnTime ? "Let's talk" : "Late, please excuse, Write anything...";
 console.log(msg);
 
+s
+
 
 

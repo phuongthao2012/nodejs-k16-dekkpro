@@ -22,3 +22,5 @@ if (clientAge < 18) {
     console.log("2 chai");
 
 } */
+
+star

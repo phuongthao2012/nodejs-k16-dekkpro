@@ -11,6 +11,8 @@
  * ****************************
  */
 
+
+
 const readline = require('readline-sync');
 
 let height = Number(readline.question('Your height (m): '));
@@ -27,7 +29,9 @@ if (height <= 0 || weight <= 0) {
 
     // check
     if (BMI < 18.5) {
-        console.log("Underweight");
+        // console.log("Underweight");
+        console.log(`/tUnderweight with BMI:${(BMI).toFixed(2)} need increase to ${(BMI+2).toFixed(2)}`);
+        
     } else if (BMI >= 18.5 && BMI <= 24.9) {
         console.log("Normal weight");
     } else if (BMI >= 25 && BMI <= 29.9) {
