@@ -34,7 +34,7 @@ const bankCountNumberRoot = {
 let bankCountClone = JSON.parse(JSON.stringify(bankCountNumberRoot));
 bankCountClone.accountNumber = "456";
 bankCountClone.name = "Ph Hai";
-bankCountClone.balance= 100;
+bankCountClone.balance = 100;
 console.log(bankCountNumberRoot);
 console.log(bankCountClone);
 consoleInterface();
@@ -84,42 +84,31 @@ function consoleInterface() {
         }
         if (foundAccount != 1) {
             console.log(`Account not found`);
-
-
         }
     }
-// this code could be enhanced by reuse function findAnAccount() , do it later 
+    // this code could be enhanced by reuse function findAnAccount() , do it later 
     function withdrawMoney(accounts) {
-        let withdrawAmount = Number (rl.question(`How much do you want to withdraw: `));
+        let withdrawAmount = Number(rl.question(`How much do you want to withdraw: `));
         let foundAccount = 0;
         let leftAmount = 0;
         for (account of accounts) {
             if (foundAccount == 0) {
                 if (accountNumber == account.accountNumber) {
                     foundAccount = 1;
-                    if (account.balance<withdrawAmount){
+                    if (account.balance < withdrawAmount) {
                         console.log(`Could not withdraw because the ${withdrawAmount} is greater than your balance value: ${account.balance}`);
-                        
-                    }else{
-                    leftAmount = account.balance - withdrawAmount;
-                    console.log(`Remaining: ${leftAmount} \n =====GOOD BYE=====`);
+
+                    } else {
+                        leftAmount = account.balance - withdrawAmount;
+                        console.log(`Remaining: ${leftAmount} \n =====GOOD BYE=====`);
                     }
                 }
             }
         }
         if (foundAccount != 1) {
             console.log(`Account not found`);
-
-
         }
-
-
     }
-
-
-
-
-
 }
 
 
