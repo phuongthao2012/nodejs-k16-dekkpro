@@ -86,21 +86,19 @@ function consoleInterface() {
             console.log(`Account not found`);
         }
     }
-    // this code could be enhanced by reuse function findAnAccount() , do it later 
+  
     function withdrawMoney(accounts) {
         let withdrawAmount = Number(rl.question(`How much do you want to withdraw: `));
         let foundAccount = 0;
-        let leftAmount = 0;
         for (account of accounts) {
             if (foundAccount == 0) {
                 if (accountNumber == account.accountNumber) {
                     foundAccount = 1;
-                    if (account.balance < withdrawAmount) {
-                        console.log(`Could not withdraw because the ${withdrawAmount} is greater than your balance value: ${account.balance}`);
-
+                    if (isNaN(withdrawAmount) || withdrawAmount <= 0 ||account.balance < withdrawAmount) {
+                        console.log(`Could not withdraw because your input value is invalid ' ${withdrawAmount} ' that not match your balance value: ${account.balance}`);
                     } else {
-                        leftAmount = account.balance - withdrawAmount;
-                        console.log(`Remaining: ${leftAmount} \n =====GOOD BYE=====`);
+                        account.balance -= withdrawAmount;
+                        console.log(`Remaining: ${account.balance} \n =====GOOD BYE=====`);
                     }
                 }
             }
