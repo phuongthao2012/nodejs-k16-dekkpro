@@ -86,7 +86,7 @@ function consoleInterface() {
             console.log(`Account not found`);
         }
     }
-  
+
     function withdrawMoney(accounts) {
         let withdrawAmount = Number(rl.question(`How much do you want to withdraw: `));
         let foundAccount = 0;
@@ -94,7 +94,7 @@ function consoleInterface() {
             if (foundAccount == 0) {
                 if (accountNumber == account.accountNumber) {
                     foundAccount = 1;
-                    if (isNaN(withdrawAmount) || withdrawAmount <= 0 ||account.balance < withdrawAmount) {
+                    if (isNaN(withdrawAmount) || withdrawAmount <= 0 || account.balance < withdrawAmount) {
                         console.log(`Could not withdraw because your input value is invalid ' ${withdrawAmount} ' that not match your balance value: ${account.balance}`);
                     } else {
                         account.balance -= withdrawAmount;
