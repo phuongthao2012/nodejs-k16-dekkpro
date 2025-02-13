@@ -9,7 +9,7 @@ waitForResponse().then(goToTheCoffeeShop);
 
 console.log("3. Chay toi quan cafe");
 
-funtion goToTheCoffeeShop(){
+function goToTheCoffeeShop(){
     console.log("3. Chay toi quan cafe");
 }
 
