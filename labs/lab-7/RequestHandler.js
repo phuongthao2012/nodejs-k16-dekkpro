@@ -14,7 +14,7 @@ class RequestHandler {
         try {
             const response = await fetch(POST_ENDPOINT);
             const allPosts = await response.json();
-            
+
             return allPosts
                 .map(post => new Post(post.userId, post.id, post.title, post.body));
         } catch (error) {
@@ -29,7 +29,7 @@ class RequestHandler {
 
         if (targetPost) {
             console.log(targetPost);
-            
+
         } else {
             console.log(`Post with ID ${postId} not found!`);
         }
@@ -49,7 +49,7 @@ class RequestHandler {
         }
     }
 
-    
+
 }
 
 module.exports = RequestHandler;

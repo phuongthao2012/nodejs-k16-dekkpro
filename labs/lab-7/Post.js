@@ -3,8 +3,8 @@
  * Constructure POST request
  * ****************************
  */
-class Post{
-    constructor(userId, postId, title, body){
+class Post {
+    constructor(userId, postId, title, body) {
         this._userId = userId;
         this._postId = postId;
         this._title = title;
@@ -13,25 +13,25 @@ class Post{
     get userId() {
         return this._userId;
     }
-    set userId(userId){
+    set userId(userId) {
         this._userId = userId;
-    }   
-    get postId(){
+    }
+    get postId() {
         return this._postId;
     }
-    set postId(postId){
+    set postId(postId) {
         this._postId = postId;
     }
-    get title(){
+    get title() {
         return this._title;
     }
-    set title(title){
+    set title(title) {
         this._title = title;
     }
-    get body(){
+    get body() {
         return this._body;
     };
-    set body(body){
+    set body(body) {
         this._body = body;
     }
 

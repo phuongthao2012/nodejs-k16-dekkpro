@@ -3,6 +3,8 @@ const readline = require('readline-sync');
 
 const POST_ENDPOINT = 'https://jsonplaceholder.typicode.com/posts';
 
+main();
+
 async function main() {
     const requestHandler = new RequestHandler();
     let option;
@@ -13,7 +15,7 @@ async function main() {
         console.log(`2. Print all related posts`);
         console.log(`0. Exit!`);
         console.log(`===============`);
-        
+
         option = parseInt(readline.question("Please enter your choice: "), 10);
 
         switch (option) {
@@ -41,4 +43,3 @@ async function main() {
     } while (option !== 0);
 }
 
-main();
