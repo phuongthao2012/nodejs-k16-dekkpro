@@ -9,6 +9,20 @@
 const Post = require('./Post'); // Import class Post
 
 class RequestHandler {
+    // fetch all Post with userID and set into Post object
+    async _getAllPosts(POST_ENDPOINT, userId) {
+        try {
+            const response = await fetch(POST_ENDPOINT);
+            const allPosts = await response.json();
+            
+            return allPosts
+                .filter(post => post.userId === userId)
+                .map(post => new Post(post.userId, post.id, post.title, post.body));
+        } catch (error) {
+            console.error('Error fetching data:', error);
+            return [];
+        }
+    }
     async printTargetPost(POST_ENDPOINT, userId, postId) {
         const allPosts = await this._getAllPosts(POST_ENDPOINT, userId);
         const targetPost = allPosts.find(post => post.postId === postId);
@@ -33,20 +47,8 @@ class RequestHandler {
             console.log(`No posts found for User ID ${userId}`);
         }
     }
-// fetch all Post with userID and set into Post object
-    async _getAllPosts(POST_ENDPOINT, userId) {
-        try {
-            const response = await fetch(POST_ENDPOINT);
-            const allPosts = await response.json();
-            
-            return allPosts
-                .filter(post => post.userId === userId)
-                .map(post => new Post(post.userId, post.id, post.title, post.body));
-        } catch (error) {
-            console.error('Error fetching data:', error);
-            return [];
-        }
-    }
+
+    
 }
 
 module.exports = RequestHandler;
