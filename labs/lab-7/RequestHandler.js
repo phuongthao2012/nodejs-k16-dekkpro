@@ -10,13 +10,12 @@ const Post = require('./Post'); // Import class Post
 
 class RequestHandler {
     // fetch all Post with userID and set into Post object
-    async _getAllPosts(POST_ENDPOINT, userId) {
+    async _getAllPosts(POST_ENDPOINT) {
         try {
             const response = await fetch(POST_ENDPOINT);
             const allPosts = await response.json();
             
             return allPosts
-                .filter(post => post.userId === userId)
                 .map(post => new Post(post.userId, post.id, post.title, post.body));
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -24,8 +23,9 @@ class RequestHandler {
         }
     }
     async printTargetPost(POST_ENDPOINT, userId, postId) {
-        const allPosts = await this._getAllPosts(POST_ENDPOINT, userId);
-        const targetPost = allPosts.find(post => post.postId === postId);
+        const allPosts = await this._getAllPosts(POST_ENDPOINT);
+        const userPosts = allPosts.filter(post => post.userId === userId);
+        const targetPost = userPosts.find(post => post.postId === postId);
 
         if (targetPost) {
             console.log(targetPost);
@@ -36,11 +36,12 @@ class RequestHandler {
     }
 
     async printAllPosts(POST_ENDPOINT, userId) {
-        const allPosts = await this._getAllPosts(POST_ENDPOINT, userId);
+        const allPosts = await this._getAllPosts(POST_ENDPOINT);
+        const userPosts = allPosts.filter(post => post.userId === userId);
 
-        if (allPosts.length > 0) {
+        if (userPosts.length > 0) {
             console.log(`\nAll Posts for User ID: ${userId}\n`);
-            allPosts.forEach(post => {
+            userPosts.forEach(post => {
                 console.log(post);
             });
         } else {
