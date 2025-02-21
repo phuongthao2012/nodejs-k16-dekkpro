@@ -10,7 +10,7 @@ const Post = require('./Post'); // Import class Post
 
 class RequestHandler {
     // fetch all Post with userID and set into Post object
-    async getAllPosts(POST_ENDPOINT) {
+    async _getAllPosts(POST_ENDPOINT) {
         try {
             const response = await fetch(POST_ENDPOINT);
             const allPosts = await response.json();
@@ -23,7 +23,7 @@ class RequestHandler {
         }
     }
     async printTargetPost(POST_ENDPOINT, userId, postId) {
-        const allPosts = await this.getAllPosts(POST_ENDPOINT);
+        const allPosts = await this._getAllPosts(POST_ENDPOINT);
         const userPosts = allPosts.filter(post => post.userId === userId);
         const targetPost = userPosts.find(post => post.postId === postId);
 
@@ -36,7 +36,7 @@ class RequestHandler {
     }
 
     async printAllPosts(POST_ENDPOINT, userId) {
-        const allPosts = await this.getAllPosts(POST_ENDPOINT);
+        const allPosts = await this._getAllPosts(POST_ENDPOINT);
         const userPosts = allPosts.filter(post => post.userId === userId);
 
         if (userPosts.length > 0) {
