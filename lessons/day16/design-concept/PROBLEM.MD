@@ -1,0 +1,3 @@
+- Contract employee
+- FTE
+#Propertise

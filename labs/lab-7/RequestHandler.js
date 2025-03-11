@@ -10,7 +10,7 @@ const Post = require('./Post'); // Import class Post
 
 class RequestHandler {
     // fetch all Post with userID and set into Post object
-    // constructor this object for handle the POST which is raw data
+    // constructor this object for handle the POST which is raw data -> support function
     async _getAllPosts(POST_ENDPOINT) {
         try {
             const response = await fetch(POST_ENDPOINT);
@@ -26,7 +26,7 @@ class RequestHandler {
             return [];
         }
     }
-    // this method for handle the POST after construction
+    // this method for handle the POST after construction -> service function
 
     async printTargetPost(POST_ENDPOINT, userId, postId) {
         // handle the POST, add raw data into Post object

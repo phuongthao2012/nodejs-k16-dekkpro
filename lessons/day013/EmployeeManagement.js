@@ -1,10 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // create data
-const Employee = require('./Employee');
-const SalaryControler = require('./SalaryControler');
-let teo = new Employee("Teo", 1000);
-let ti = new Employee("Ti", 2000);
+/* const Employee = require('./Employee');
+const SalaryControler = require('./SalaryControler'); */
+var Employee_js_1 = require("./Employee.js");
+var SalaryControler_js_1 = require("./SalaryControler.js");
+var teo = new Employee_js_1.default("Teo", 1000);
+var ti = new Employee_js_1.default("Ti", 2000);
 // init controler
-let salaryControler = new SalaryControler();
+var salaryControler = new SalaryControler_js_1.default();
 // get the evaluated result
-const totalSalary = salaryControler.getTotalSalary([teo, ti]);
+var totalSalary = salaryControler.getTotalSalary([teo, ti]);
 console.log(totalSalary);
