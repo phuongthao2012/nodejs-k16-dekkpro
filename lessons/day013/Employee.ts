@@ -1,8 +1,8 @@
 export class Employee{
     // OOP: xay dung huong doi tuong
     private _name: string;
-    private _salary: string;
-    constructor(name: string,salary: string){
+    private _salary: number;
+    constructor(name: string,salary: number){
         this._name = name;
         this._salary = salary;
     }
@@ -20,5 +20,5 @@ export class Employee{
     }
 
 }
-export{Employee}
-module.exports = Employee;
+/* export{Employee}
+module.exports = Employee; */

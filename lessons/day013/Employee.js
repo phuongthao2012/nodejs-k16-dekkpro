@@ -29,4 +29,5 @@ var Employee = /** @class */ (function () {
     return Employee;
 }());
 exports.Employee = Employee;
-module.exports = Employee;
+/* export{Employee}
+module.exports = Employee; */

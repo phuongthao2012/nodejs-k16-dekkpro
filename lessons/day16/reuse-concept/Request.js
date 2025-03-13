@@ -23,5 +23,8 @@ class Request{
     verifyResponse(){
         console.log(`Verifying response ...`);
     }
+    static doSomething(){
+        console.log('This is class method from the parent class');
+    }
 }
 module.exports = Request;
