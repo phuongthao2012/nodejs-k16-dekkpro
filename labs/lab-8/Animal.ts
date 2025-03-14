@@ -19,9 +19,9 @@ Ex: const randomNumber = Math.floor(Math.random() * 100) + 1;
 
 
 export class Animal {
-    private name: string;
-    private speed: number;
-    private maxSpeed: number;
+    protected name: string;
+    protected speed: number;
+    protected maxSpeed: number;
     constructor(name: string, maxSpeed: number) {
         this.name = name;
         this.maxSpeed = maxSpeed;
@@ -31,21 +31,21 @@ export class Animal {
     public getRandomSpeed(): number {
         return (Math.floor(Math.random() * this.maxSpeed) + 1);
     }
-    public getSpeed(): number {
+    public Speed(): number {
         return this.speed;
     }
-    public getName(): string {
+    public Name(): string {
         return this.name;
     }
-    public setName(name: string): void {
-        this.name = name;
-    }
-    public getmaxSpeed(): number {
+    /*     public setName(name: string): void {
+            this.name = name;
+        } */
+/*     public getmaxSpeed(): number {
         return this.maxSpeed;
     }
     public setmaxSpeed(maxSpeed: number): void {
         this.maxSpeed = maxSpeed;
-    }
+    } */
 
 
 }

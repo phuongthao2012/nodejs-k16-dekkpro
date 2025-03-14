@@ -7,11 +7,11 @@ function main() {
     const tiger = new Tiger();
     const dog = new Dog();
     const racingAnimals = [horse, tiger, dog];
-    const winner = racingAnimals.sort((a, b) => b.getSpeed() - a.getSpeed())[0];
-    console.log("horse:", horse.getSpeed());
-    console.log("tiger:", tiger.getSpeed());
-    console.log("dog:", dog.getSpeed());
+    const winner = racingAnimals.sort((a, b) => b.Speed() - a.Speed())[0];
+    console.log("horse:", horse.Speed());
+    console.log("tiger:", tiger.Speed());
+    console.log("dog:", dog.Speed());
 
-    console.log(`Winner is ${winner.getName()}, with speed: ${winner.getSpeed()} km/h`);
+    console.log(`Winner is ${winner.Name()}, with speed: ${winner.Speed()} km/h`);
 
 }
