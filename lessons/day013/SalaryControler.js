@@ -12,7 +12,7 @@ var SalaryControler = /** @class */ (function () {
         var totalSalary = 0;
         for (var _i = 0, employeeList_1 = employeeList; _i < employeeList_1.length; _i++) {
             var employee = employeeList_1[_i];
-            totalSalary = totalSalary + employee.salary;
+            totalSalary = totalSalary + employee.getsalary();
             // totalSalary += employee.salary;
         }
         return totalSalary;

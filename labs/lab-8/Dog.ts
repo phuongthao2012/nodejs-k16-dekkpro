@@ -1,5 +1,5 @@
-import { Animal } from "./Animal";
-export class Dog extends Animal {
+import Animal from "./Animal";
+export default class Dog extends Animal {
     constructor() {
         super("Dog", 60);
     }

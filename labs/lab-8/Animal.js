@@ -1,3 +1,4 @@
+"use strict";
 /**
  * ****************************
  * Credit: Nguyen Thinh Khang (Dev), in Selenium K1 for contributing the exercise.
@@ -16,37 +17,23 @@ Print result with format: Winner is <Animal name>, with speed: <speed>
 Ex: const randomNumber = Math.floor(Math.random() * 100) + 1;
  * ****************************
  */
-
-
-export default class Animal {
-    protected name: string;
-    protected speed: number;
+Object.defineProperty(exports, "__esModule", { value: true });
+var Animal = /** @class */ (function () {
     // protected maxSpeed: number;
-    constructor(name: string, maxSpeed: number) {
+    function Animal(name, maxSpeed) {
         this.name = name;
         // this.maxSpeed = maxSpeed;
         this.speed = this.getRandomSpeed(maxSpeed);
-
     }
-    private getRandomSpeed(maxSpeed : number): number {
+    Animal.prototype.getRandomSpeed = function (maxSpeed) {
         return (Math.floor(Math.random() * maxSpeed) + 1);
-    }
-    public getSpeed(): number {
+    };
+    Animal.prototype.getSpeed = function () {
         return this.speed;
-    }
-    public getName(): string {
+    };
+    Animal.prototype.getName = function () {
         return this.name;
-    }
-    /*     public setName(name: string): void {
-            this.name = name;
-        } */
-/*     public getmaxSpeed(): number {
-        return this.maxSpeed;
-    }
-    public setmaxSpeed(maxSpeed: number): void {
-        this.maxSpeed = maxSpeed;
-    } */
-
-
-}
-
+    };
+    return Animal;
+}());
+exports.default = Animal;

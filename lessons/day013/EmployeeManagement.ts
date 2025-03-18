@@ -1,7 +1,7 @@
 // create data
 /* const Employee = require('./Employee');
 const SalaryControler = require('./SalaryControler'); */
-import {Employee} from './Employee';
+import Employee from './Employee';
 import {SalaryControler} from './SalaryControler';
 let teo = new Employee("Teo", 1000);
 let ti = new Employee("Ti", 2000);

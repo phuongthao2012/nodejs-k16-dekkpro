@@ -1,9 +1,7 @@
 export default class Employee {
     // OOP: xay dung huong doi tuong
-    protected name: string;
     protected salary: number;
-    constructor(name: string, salary: number) {
-        this.name = name;
+    constructor(salary: number) {
         this.salary = salary;
     }
 /*     get name() {
@@ -15,7 +13,7 @@ export default class Employee {
     getsalary() {
         return this.salary;
     }
-    setsalary(salary) {
+    protected setsalary(salary) {
         this.salary = salary;
     }
 

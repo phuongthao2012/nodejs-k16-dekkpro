@@ -13,7 +13,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\lessons\\day18\\class-variable\\DogRobot.js"
+            "program": "${workspaceFolder}\\lessons\\day19\\design-concept\\EmployeeManagement.js"
         }
     ]
 }
