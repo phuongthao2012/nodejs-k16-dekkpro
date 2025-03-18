@@ -22,7 +22,7 @@ var FullTimeEmployee = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     FullTimeEmployee.prototype.maxSalary = function () {
-        return 50000;
+        return (50 * 1000);
     };
     // override abstract method in order to get the empolyee type
     FullTimeEmployee.prototype.getType = function () {
