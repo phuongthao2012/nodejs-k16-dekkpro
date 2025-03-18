@@ -24,6 +24,7 @@ var FullTimeEmployee = /** @class */ (function (_super) {
     FullTimeEmployee.prototype.maxSalary = function () {
         return 50000;
     };
+    // override abstract method in order to get the empolyee type
     FullTimeEmployee.prototype.getType = function () {
         return 'Full Time Employee';
     };

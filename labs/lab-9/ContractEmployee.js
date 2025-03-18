@@ -30,6 +30,3 @@ var ContractEmployee = /** @class */ (function (_super) {
     return ContractEmployee;
 }(Employee_1.default));
 exports.default = ContractEmployee;
-/* let contractEmp = new ContractEmployee("ti", 300*1000);
-contractEmp.salary;
-console.log(`ti: ${contractEmp.salary}$`); */ 

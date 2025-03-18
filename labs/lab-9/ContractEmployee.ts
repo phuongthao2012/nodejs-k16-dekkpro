@@ -8,6 +8,3 @@ export default class ContractEmployee extends Employee {
         return 'Contract Employee';
     }
 }
-/* let contractEmp = new ContractEmployee("ti", 300*1000);
-contractEmp.salary;
-console.log(`ti: ${contractEmp.salary}$`); */

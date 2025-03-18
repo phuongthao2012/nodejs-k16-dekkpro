@@ -4,7 +4,7 @@ import FullTimeEmployee from "./FullTimeEmployee";
 const readline = require('readline-sync');
 
 export default class EmployeeController {
-    public static getTotalSalary(employeeList: Employee[]): number { //neu khong  return thi la undefined, neu co return thi phai define value tra ve la number
+    public static getTotalSalary(employeeList: Employee[]): number {
         let totalSalary: number = 0;
         for (const employee of employeeList) {
             totalSalary = totalSalary + employee.salary;
@@ -51,7 +51,7 @@ export default class EmployeeController {
     }
     // Sort employees by salary in asc order
     public static sortBySalary(employees: Employee[]): Employee[] {
-        
+
         return employees.sort((a, b) => b.salary - a.salary);
     }
 
