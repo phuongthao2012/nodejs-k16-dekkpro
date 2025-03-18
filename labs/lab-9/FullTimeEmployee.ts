@@ -1,10 +1,10 @@
 import Employee from "./Employee";
 export default class FullTimeEmployee extends Employee {
-    maxSalary(): number {
+    protected maxSalary(): number {
         return (50 * 1000);
     }
     // override abstract method in order to get the empolyee type
-    getType(): string {
+    public getType(): string {
         return 'Full Time Employee';
     }
 }

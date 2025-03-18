@@ -7,8 +7,8 @@ export default abstract class Employee {
         this.name = name;
         this.salary = salary;
     }
-    abstract maxSalary(): number;
-    abstract getType(): string;
+    protected abstract maxSalary(): number;
+    public abstract getType(): string;
     public setSalary(salary: number): void {
         // While salary exceeds the max allowed, input again
         while (salary > this.maxSalary()) {
