@@ -45,10 +45,10 @@ var EmployeeController = /** @class */ (function () {
         return employees;
     };
     // descending sort by salary
-    EmployeeController.sortBySalary = function (employees, descending) {
-        if (descending === void 0) { descending = true; }
+    EmployeeController.sortBySalary = function (employees, ascending) {
+        if (ascending === void 0) { ascending = false; }
         // return a copied version of the employees array, avoid changing the original array
-        return __spreadArray([], employees, true).sort(function (a, b) { return descending ? b.salary - a.salary : a.salary - b.salary; });
+        return __spreadArray([], employees, true).sort(function (a, b) { return ascending ? a.salary - b.salary : b.salary - a.salary; });
     };
     // Salary descending sort
     EmployeeController.findHighestSalary = function (employees) {
