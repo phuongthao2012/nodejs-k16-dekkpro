@@ -1,7 +1,7 @@
 const readline = require('readline-sync');
 export default abstract class Employee {
-    public salary: number;
-    public name: string;
+    private salary: number;
+    private name: string;
 
     constructor(name: string, salary: number) {
         this.name = name;
@@ -16,6 +16,12 @@ export default abstract class Employee {
             salary = Number(readline.question(`Please enter a valid salary for ${this.name} (up to ${this.maxSalary()}):`));
         }
         this.salary = salary;
+    }
+    public getSalary(): number {
+        return this.salary;
+    }
+    public getName(): string {
+        return this.name;
     }
 
 

@@ -19,7 +19,7 @@ var EmployeeController = /** @class */ (function () {
         var totalSalary = 0;
         for (var _i = 0, employeeList_1 = employeeList; _i < employeeList_1.length; _i++) {
             var employee = employeeList_1[_i];
-            totalSalary = totalSalary + employee.salary;
+            totalSalary = totalSalary + employee.getSalary();
         }
         return totalSalary;
     };
@@ -48,7 +48,7 @@ var EmployeeController = /** @class */ (function () {
     EmployeeController.sortBySalaryASC = function (employees, ascending) {
         if (ascending === void 0) { ascending = false; }
         // return a copied version of the employees array, avoid changing the original array
-        return __spreadArray([], employees, true).sort(function (a, b) { return ascending ? a.salary - b.salary : b.salary - a.salary; });
+        return __spreadArray([], employees, true).sort(function (a, b) { return ascending ? a.getSalary() - b.getSalary() : b.getSalary() - a.getSalary(); });
     };
     // Salary descending sort
     EmployeeController.findHighestSalary = function (employees) {
@@ -61,7 +61,7 @@ var EmployeeController = /** @class */ (function () {
         return this.sortBySalaryASC(employees, true)[0];
     };
     EmployeeController.sortByName = function (employees) {
-        return __spreadArray([], employees, true).sort(function (a, b) { return a.name.localeCompare(b.name); });
+        return __spreadArray([], employees, true).sort(function (a, b) { return a.getName().localeCompare(b.getName()); });
     };
     return EmployeeController;
 }());

@@ -14,6 +14,12 @@ var Employee = /** @class */ (function () {
         }
         this.salary = salary;
     };
+    Employee.prototype.getSalary = function () {
+        return this.salary;
+    };
+    Employee.prototype.getName = function () {
+        return this.name;
+    };
     return Employee;
 }());
 exports.default = Employee;
