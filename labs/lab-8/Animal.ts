@@ -37,16 +37,6 @@ export default class Animal {
     public getName(): string {
         return this.name;
     }
-    /*     public setName(name: string): void {
-            this.name = name;
-        } */
-/*     public getmaxSpeed(): number {
-        return this.maxSpeed;
-    }
-    public setmaxSpeed(maxSpeed: number): void {
-        this.maxSpeed = maxSpeed;
-    } */
-
 
 }
 

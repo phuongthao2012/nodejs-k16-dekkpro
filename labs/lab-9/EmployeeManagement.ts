@@ -1,6 +1,4 @@
-// import ContractEmployee from "./ContractEmployee";
 import EmployeeController from "./EmployeeControler";
-// import FullTimeEmployee from "./FullTimeEmployee";
 const readline = require('readline-sync');
 
 // EmployeeController.inputEmployees();

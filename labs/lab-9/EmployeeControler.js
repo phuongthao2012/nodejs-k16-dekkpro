@@ -1,4 +1,13 @@
 "use strict";
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var ContractEmployee_1 = require("./ContractEmployee");
 var FullTimeEmployee_1 = require("./FullTimeEmployee");
@@ -35,21 +44,24 @@ var EmployeeController = /** @class */ (function () {
         }
         return employees;
     };
-    // Find employee with the highest salary
+    // sort by salary with ascending by default (true)
+    EmployeeController.sortBySalary = function (employees, ascending) {
+        if (ascending === void 0) { ascending = false; }
+        // return a copied version of the employees array, avoid changing the original array
+        return __spreadArray([], employees, true).sort(function (a, b) { return ascending ? a.salary - b.salary : b.salary - a.salary; });
+    };
+    // Salary descending sort
     EmployeeController.findHighestSalary = function (employees) {
-        return employees.reduce(function (highest, employee) { return (employee.salary > highest.salary ? employee : highest); });
+        // take the first employee after sort by desc
+        return this.sortBySalary(employees, false)[0];
     };
-    // Find employee with the lowest salary
+    // Salary ascending sort
     EmployeeController.findLowestSalary = function (employees) {
-        return employees.reduce(function (lowest, employee) { return (employee.salary < lowest.salary ? employee : lowest); });
+        // take the first employee after sort by asc
+        return this.sortBySalary(employees, true)[0]; // First element after ascending sort
     };
-    // Sort employees by salary in asc order
-    EmployeeController.sortBySalary = function (employees) {
-        return employees.sort(function (a, b) { return b.salary - a.salary; });
-    };
-    // Sort employees by name in alphabetical order
     EmployeeController.sortByName = function (employees) {
-        return employees.sort(function (a, b) { return a.name.localeCompare(b.name); });
+        return __spreadArray([], employees, true).sort(function (a, b) { return a.name.localeCompare(b.name); });
     };
     return EmployeeController;
 }());

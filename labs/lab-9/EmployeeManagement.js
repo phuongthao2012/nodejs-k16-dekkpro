@@ -1,8 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// import ContractEmployee from "./ContractEmployee";
 var EmployeeControler_1 = require("./EmployeeControler");
-// import FullTimeEmployee from "./FullTimeEmployee";
 var readline = require('readline-sync');
 // EmployeeController.inputEmployees();
 var employees = EmployeeControler_1.default.inputEmployees();
