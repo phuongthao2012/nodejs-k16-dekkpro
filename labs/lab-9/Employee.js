@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// const readline = require('readline-sync');
 var Employee = /** @class */ (function () {
     function Employee(name, salary) {
         this.name = name;

@@ -32,7 +32,7 @@ var EmployeeController = /** @class */ (function () {
             var salary = Number(readline.question("Enter full time employee salary: "));
             // While salary exceeds the max allowed, input again
             var employee = new FullTimeEmployee_1.default(name_1, 0);
-            console.log(employee.getMaxSalary());
+            // console.log(employee.getMaxSalary());          
             while (salary > employee.getMaxSalary()) {
                 console.log("\t ".concat(salary, "'s salary exceeds the max limit of ").concat(employee.getMaxSalary(), "."));
                 salary = Number(readline.question("Please enter a valid salary for ".concat(employee.getName(), " (up to ").concat(employee.getMaxSalary(), "):")));

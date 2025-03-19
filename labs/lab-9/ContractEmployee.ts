@@ -1,6 +1,6 @@
 import Employee from "./Employee";
 export default class ContractEmployee extends Employee {
-    public setMaxSalary(): number {
+    protected setMaxSalary(): number {
         return (40 * 1000);
     }
 

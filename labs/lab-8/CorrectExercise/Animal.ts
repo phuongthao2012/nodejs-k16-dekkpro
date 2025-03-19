@@ -5,7 +5,7 @@ export default class Animal {
         this.name = name;
         this.speed = Math.floor(Math.random() * maxSpeed);
     }
-    private getSpeed(): number {
+    public getSpeed(): number {
         return this.speed;
     }
 

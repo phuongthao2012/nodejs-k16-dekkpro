@@ -1,4 +1,3 @@
-// const readline = require('readline-sync');
 export default abstract class Employee {
     protected salary: number;
     private name: string;
@@ -9,7 +8,7 @@ export default abstract class Employee {
         this.salary = salary;
         this.maxSalary = this.setMaxSalary(); 
     }
-    public abstract setMaxSalary(): number;
+    protected abstract setMaxSalary(): number;
     public abstract getType(): string;
     protected abstract setSalary(salary: number): void ;
     public getSalary(): number {
