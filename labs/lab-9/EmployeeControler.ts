@@ -49,7 +49,7 @@ export default class EmployeeController {
     // Salary ascending sort
     public static findLowestSalary(employees: Employee[]): Employee {
         // take the first employee after sort by asc
-        return this.sortBySalary(employees, true)[0]; // First element after ascending sort
+        return this.sortBySalary(employees, true)[0]; 
     }
     public static sortByName(employees: Employee[]): Employee[] {
         return [...employees].sort((a, b) => a.name.localeCompare(b.name));

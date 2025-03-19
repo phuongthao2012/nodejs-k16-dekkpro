@@ -58,7 +58,7 @@ var EmployeeController = /** @class */ (function () {
     // Salary ascending sort
     EmployeeController.findLowestSalary = function (employees) {
         // take the first employee after sort by asc
-        return this.sortBySalary(employees, true)[0]; // First element after ascending sort
+        return this.sortBySalary(employees, true)[0];
     };
     EmployeeController.sortByName = function (employees) {
         return __spreadArray([], employees, true).sort(function (a, b) { return a.name.localeCompare(b.name); });
