@@ -36,20 +36,20 @@ export default class EmployeeController {
         return employees;
 
     }
-    // descending sort by salary
-    public static sortBySalary(employees: Employee[], ascending: boolean = false): Employee[] {
+    // sort by salary defauult is ascending
+    public static sortBySalaryASC(employees: Employee[], ascending: boolean = false): Employee[] {
         // return a copied version of the employees array, avoid changing the original array
         return [...employees].sort((a, b) => ascending ? a.salary - b.salary : b.salary - a.salary);
     }
     // Salary descending sort
     public static findHighestSalary(employees: Employee[]): Employee {
         // take the first employee after sort by desc
-        return this.sortBySalary(employees, false)[0]; 
+        return this.sortBySalaryASC(employees, false)[0]; 
     }
     // Salary ascending sort
     public static findLowestSalary(employees: Employee[]): Employee {
         // take the first employee after sort by asc
-        return this.sortBySalary(employees, true)[0]; 
+        return this.sortBySalaryASC(employees, true)[0]; 
     }
     public static sortByName(employees: Employee[]): Employee[] {
         return [...employees].sort((a, b) => a.name.localeCompare(b.name));

@@ -12,8 +12,8 @@ console.log(`\n \t Total salary of all employees: ${totalSalary} $`);
 console.log(`\t Employee with the highest salary: ${highestSalaryEmployee.name} (${highestSalaryEmployee.salary}$) and is a ${highestSalaryEmployee.getType()}`);
 console.log(`\t Employee with the lowest salary: ${lowestSalaryEmployee.name} (${lowestSalaryEmployee.salary}$) and is a ${lowestSalaryEmployee.getType()}`);
 
-// Sort employees by salary descending
-let sortedBySalary = EmployeeController.sortBySalary(employees,false);
+// DESC Sort employees by salary 
+let sortedBySalary = EmployeeController.sortBySalaryASC(employees,false);
 console.log(`Employees sorted by salary (descending):\n`);
 sortedBySalary.forEach(employee => console.log(`\t ${employee.name} (${employee.salary}$) is a ${employee.getType()}`));
 // Sort employees by name 
