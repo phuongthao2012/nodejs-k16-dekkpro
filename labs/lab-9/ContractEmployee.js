@@ -21,11 +21,14 @@ var ContractEmployee = /** @class */ (function (_super) {
     function ContractEmployee() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    ContractEmployee.prototype.maxSalary = function () {
+    ContractEmployee.prototype.setMaxSalary = function () {
         return (40 * 1000);
     };
     ContractEmployee.prototype.getType = function () {
         return 'Contract Employee';
+    };
+    ContractEmployee.prototype.setSalary = function (salary) {
+        this.salary = salary;
     };
     return ContractEmployee;
 }(Employee_1.default));

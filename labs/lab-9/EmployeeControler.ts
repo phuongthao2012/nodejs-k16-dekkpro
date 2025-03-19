@@ -21,7 +21,14 @@ export default class EmployeeController {
         for (let i = 0; i < 3; i++) {
             let name = readline.question(`Enter full time employee name: `);
             let salary = Number(readline.question(`Enter full time employee salary: `));
-            let employee = new FullTimeEmployee(name, salary);
+            // While salary exceeds the max allowed, input again
+            let employee = new FullTimeEmployee(name, 0);
+            // console.log(employee.getMaxSalary());          
+            
+            while (salary > employee.getMaxSalary()) {
+                console.log(`\t ${salary}'s salary exceeds the max limit of ${employee.getMaxSalary()}.`);
+                salary = Number(readline.question(`Please enter a valid salary for ${employee.getName()} (up to ${employee.getMaxSalary()}):`));
+            }
             employee.setSalary(salary);
             employees.push(employee);
         }
@@ -29,7 +36,12 @@ export default class EmployeeController {
         for (let i = 0; i < 2; i++) {
             let name = readline.question(`Enter contract employees name: `);
             let salary = Number(readline.question(`Enter contract employees salary: `));
-            let employee = new ContractEmployee(name, salary);
+            let employee = new ContractEmployee(name, 0);
+            while (salary > employee.getMaxSalary()) {
+                console.log(`\t ${salary}'s salary exceeds the max limit of ${employee.getMaxSalary()}.`);
+                salary = Number(readline.question(`Please enter a valid salary for ${employee.getName()} (up to ${employee.getMaxSalary()}):`));
+            }
+            
             employee.setSalary(salary);
             employees.push(employee);
         }
@@ -44,12 +56,12 @@ export default class EmployeeController {
     // Salary descending sort
     public static findHighestSalary(employees: Employee[]): Employee {
         // take the first employee after sort by desc
-        return this.sortBySalaryASC(employees, false)[0]; 
+        return this.sortBySalaryASC(employees, false)[0];
     }
     // Salary ascending sort
     public static findLowestSalary(employees: Employee[]): Employee {
         // take the first employee after sort by asc
-        return this.sortBySalaryASC(employees, true)[0]; 
+        return this.sortBySalaryASC(employees, true)[0];
     }
     public static sortByName(employees: Employee[]): Employee[] {
         return [...employees].sort((a, b) => a.getName().localeCompare(b.getName()));
