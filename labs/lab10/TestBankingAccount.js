@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var CheckingAccount_1 = require("./CheckingAccount");
+var SavingAccount_1 = require("./SavingAccount");
+var saving = new SavingAccount_1.default("123", "Ti", 500);
+// console.log(JSON.stringify(saving));
+console.log("\t Initial Saving Account with: ".concat(JSON.stringify(saving)));
+saving.deposit(200);
+saving.withdraw(100);
+saving.withdraw(-100);
+console.log("Saving account of ".concat(saving.getAccountName(), " with balance: ").concat(saving.getBalance()));
+var checking = new CheckingAccount_1.default("456", "Teo", 500);
+console.log("\t Initial Checking Account with: ".concat(JSON.stringify(checking)));
+checking.deposit(100);
+checking.withdraw(320);
+checking.withdraw(250);
+console.log("Saving account of ".concat(checking.getAccountName(), " with balance: ").concat(checking.getBalance()));

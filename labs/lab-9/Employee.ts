@@ -22,3 +22,4 @@ export default abstract class Employee {
     }
 
 }
+// let emp = new Employee("abc", 1000);// khong the tao instance tu 1 abstract class

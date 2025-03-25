@@ -1,0 +1,36 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * ****************************
+ * Bank accounts:
+Saving: can deposit and get balance and withdraw maximum amount
+Checking: same as saving account but can't with draw all money, should be left 50
+Requirement
+1. Define an abstract class BankingAccount with the following abstract methods:
+deposit(amount: number): void: Adds the given amount to the account balance.
+withdraw(amount: number): void: Subtracts the given amount from the account balance.
+getBalance(): number: Returns the current balance of the account.
+2. Create concrete subclasses of Account for different types of bank accounts:
+SavingsAccount: Represents a savings account.
+CheckingAccount: Represents a checking account. It should have a minimumBalance property.
+3. Implement the abstract methods in each subclass to handle deposit, withdrawal, and balance retrieval according to the rules of each account type.
+
+4. Create instances of each account type and test their methods by performing deposits, withdrawals, and checking balances.
+ * ****************************
+ */
+var BankingAccount = /** @class */ (function () {
+    function BankingAccount(accountNumber, accountName, initBalance) {
+        this.accountNumber = accountNumber;
+        this.accountName = accountName;
+        this.balance = initBalance;
+    }
+    ;
+    BankingAccount.prototype.getAccountNumber = function () {
+        return this.accountNumber;
+    };
+    BankingAccount.prototype.getAccountName = function () {
+        return this.accountName;
+    };
+    return BankingAccount;
+}());
+exports.default = BankingAccount;
